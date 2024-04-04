@@ -1,0 +1,246 @@
+/* @font-face {
+  font-family: Roboto;
+  src: url(../fonts/roboto-700.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/roboto-300.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/roboto-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+} */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #fff;
+  background-color: #31473a;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body *:focus {
+  outline: none;
+}
+
+h1 {
+  max-width: 980px;
+  margin: 75px auto 75px;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+form {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 0 70px;
+  color: #000;
+  background-color: #edf4f2;
+}
+
+.field-group {
+  padding: 45px 70px;
+  border-bottom: 1px solid #31473a;
+}
+
+.field-group:last-of-type {
+  border: none;
+}
+
+.field-container {
+  margin: 0;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-container:last-of-type {
+  margin-bottom: 0;
+}
+
+.field-container.field-room-type {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 25px;
+}
+
+.field-container.field-room-type .field-label {
+  width: 100%;
+}
+
+.field-label {
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.field-input {
+  height: 54px;
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 17px 20px;
+  outline: 2px solid #31473a;
+  width: 100%;
+}
+
+.field-input:focus {
+  outline: 4px solid #31473a;
+}
+
+.field-input::placeholder {
+  font: inherit;
+  font-weight: 300;
+  color: #696969;
+}
+
+.field-input.field-error {
+  color: #c2301d;
+  background-color: #ffc3bb;
+}
+
+.field-input.field-correct {
+  color: #31473a;
+  background-color: #d0ffe3;
+}
+
+/* Стиль скрытой подсказки */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 300px;
+  background-color: #fff;
+  color: black;
+  border-radius: 6px;
+  border: 1px solid black;
+  padding: 0 5px 0 0;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 102%; /* Отодвигаем на право от элемента */
+  /* Эффект появления с задержкой */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.tooltip .tooltip-text .tooltip-list {
+  margin: 3px;
+  padding-left: 20px;
+  font-size: 10px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.submit-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 20px auto 0;
+  padding: 13px;
+  font-size: 22px;
+  line-height: 1em;
+  color: white;
+  text-align: center;
+  background-color: #31473a;
+  border: 4px solid #31473a;
+}
+
+.submit-btn:focus {
+  color: #000;
+  background-color: transparent;
+}
+
+.field-error {
+  border-color: #f66c41;
+  background-color: #ffa181;
+}
+
+.field-correct {
+  border-color: #4ef483;
+  background-color: #b0ffaa;
+}
+
+/* Радиокнопки */
+.custom-radio {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.custom-radio::before,
+.custom-radio::after {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: inherit;
+}
+
+.custom-radio::before {
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ccc;
+}
+
+input:checked + .custom-radio::after {
+  top: 6px;
+  left: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: #31473a;
+}
+
+input:checked + .custom-radio::before {
+  border-color: #31473a;
+}
+
+input[type="radio"] {
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}

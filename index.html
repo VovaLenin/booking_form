@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Компонент «Форма»</title>
+  </head>
+  <body>
+    <h1>Форма бронирования</h1>
+    <form id="booking-form" action="#">
+      <div class="field-group phones-group">
+        <div class="field-container">
+          <label class="field-label" for="phone">Телефон</label>
+          <div class="tooltip">
+            <input class="field-input" id="phone" name="phone" type="text" />
+            <div class="tooltip-text">
+              <ul class="tooltip-list">
+                <li class="tooltip-item">Номер должен начинаться с +7</li>
+                <li class="tooltip-item">
+                  Разрешены цифры и символы ( , ) , - , символ пробела
+                </li>
+                <li class="tooltip-item">После +7 должно быть ровно 10 цифр</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field-group dates-group">
+        <div class="field-container">
+          <label class="field-label" for="checkin-date">Дата заезда</label>
+          <div class="tooltip">
+            <input
+              class="field-input"
+              id="checkin-date"
+              name="checkin-date"
+              type="text"
+              placeholder="ГГГГ-ММ-ДД"
+            />
+            <div class="tooltip-text">
+              <ul class="tooltip-list">
+                <li class="tooltip-item">
+                  Даты должны быть в формате ГГГГ-ММ-ДД или ДД.ММ.ГГГГ
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="field-container">
+          <label class="field-label" for="checkout-date">Дата выезда</label>
+          <div class="tooltip">
+            <input
+              class="field-input"
+              id="checkout-date"
+              name="checkout-date"
+              type="text"
+              placeholder="ГГГГ-ММ-ДД"
+            />
+            <div class="tooltip-text">
+              <ul class="tooltip-list">
+                <li class="tooltip-item">
+                  Даты должны быть в формате ГГГГ-ММ-ДД или ДД.ММ.ГГГГ
+                </li>
+                <li class="tooltip-item">
+                  Дата выезда должна быть больше даты заезда минимум на 4 дня.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field-group guests-group">
+        <div class="field-container">
+          <label class="field-label" for="adults">Количество взрослых</label>
+          <div class="tooltip">
+            <input class="field-input" id="adults" name="adults" type="text" />
+            <div class="tooltip-text">
+              <ul class="tooltip-list">
+                <li class="tooltip-item">
+                  Количество взрослых должно быть хотя бы 1
+                </li>
+                <li class="tooltip-item">
+                  Если выбран одноместный номер, количество взрослых не может
+                  превышать 1
+                </li>
+                <li class="tooltip-item">
+                  Если выбран семейный номер, количество взрослых должно быть 2
+                  или более
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="field-container">
+          <label class="field-label" for="children">Количество детей</label>
+          <div class="tooltip">
+            <input
+              class="field-input"
+              id="children"
+              name="children"
+              type="text"
+            />
+            <div class="tooltip-text">
+              <ul class="tooltip-list">
+                <li class="tooltip-item">
+                  Количество детей не может быть больше количества взрослых
+                </li>
+                <li class="tooltip-item">
+                  Если выбран семейный номер, количество детей должно быть 1 или
+                  более
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="field-container field-room-type">
+          <span class="field-label">Тип номера</span>
+          <input
+            type="radio"
+            name="room-type"
+            value="single"
+            checked
+            id="radio-1"
+          />
+          <label class="custom-radio" for="radio-1">Одноместный</label>
+          <input type="radio" name="room-type" value="double" id="radio-2" />
+          <label class="custom-radio" for="radio-2">Двухместный</label>
+          <input type="radio" name="room-type" value="family" id="radio-3" />
+          <label class="custom-radio" for="radio-3">Семейный</label>
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Забронировать</button>
+    </form>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
